@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.springframework.samples</groupId>
   <artifactId>spring-petclinic</artifactId>
-  <version>3.0.1-SNAPSHOT</version>
+  <version>3.0.1</version>
 
   <parent>
     <groupId>org.springframework.boot</groupId>
@@ -231,6 +231,27 @@
         </configuration>
       </plugin>
 
+      <!-- Nexus -->
+      <plugin>
+        <groupId>org.sonatype.plugins</groupId>
+        <artifactId>nxrm3-maven-plugin</artifactId>
+  <!-- replace plugin version with the latest available -->
+  <!-- https://search.maven.org/search?q=a:nxrm3-maven-plugin -->
+        <version>1.0.4</version>
+        <extensions>true</extensions>
+        <configuration>
+          <nexusUrl>http://127.0.0.1:8081</nexusUrl>
+
+    <!-- The server "id" element from settings to use authentication from settings.xml-->
+          <serverId>local-nexus</serverId>
+
+    <!-- Which repository to deploy to -->
+          <repository>maven-releases</repository>
+
+    <!-- Skip the staging deploy mojo -->
+          <skipNexusStagingDeployMojo>false</skipNexusStagingDeployMojo>
+        </configuration>
+      </plugin>
     </plugins>
   </build>
 
