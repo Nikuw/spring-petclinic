@@ -1,8 +1,14 @@
-node {
-    stage('Prepare') {
-        checkout scm
+pipeline {
+    agent any
+    tools {
+        maven "M3"
     }
-    stage('Build') {
-        sh "mvn package"
+    stages {
+        stage('Prepare') {
+            checkout scm
+        }
+        stage('Build') {
+            sh "mvn package"
+        }
     }
 }
