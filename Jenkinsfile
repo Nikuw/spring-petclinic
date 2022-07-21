@@ -5,10 +5,14 @@ pipeline {
     }
     stages {
         stage('Prepare') {
-            checkout scm
+            steps {
+                checkout scm
+            }
         }
         stage('Build') {
-            sh "mvn package"
+            steps {
+                sh "mvn package"
+            }
         }
     }
 }
