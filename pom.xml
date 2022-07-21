@@ -246,7 +246,7 @@
           <serverId>local-nexus</serverId>
 
     <!-- Which repository to deploy to -->
-          <repository>maven-snapshots</repository>
+          <repository>maven-snapshots2</repository>
 
     <!-- Skip the staging deploy mojo -->
           <skipNexusStagingDeployMojo>false</skipNexusStagingDeployMojo>
