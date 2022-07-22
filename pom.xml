@@ -35,6 +35,16 @@
     <tag>HEAD</tag>
   </scm>
 
+  <distributionManagement>
+    <repository>
+      <uniqueVersion>true</uniqueVersion>
+      <id>local-nexus</id>
+      <name>Nexus Releases Repository</name>
+      <url>http://127.0.0.1:8081/repository/maven-releases/</url>
+      <layout>default</layout>
+    </repository>
+  </distributionManagement>
+
   <dependencies>
     <!-- Spring and Spring Boot dependencies -->
     <dependency>
